@@ -1,0 +1,11 @@
+<template>
+    <h2 class="slds-m-around_medium">User Address from Child Component:</h2>
+    <p class="slds-m-around_medium">{userAddress}</p>
+
+    <h2 class="slds-m-around_medium">User Personal Details from Child Component:</h2>
+    <p class="slds-m-around_medium">{personalDetails}</p>
+
+    <template for:each={personalDetails} for:item="detail">
+        <p key={detail.uuid}> Phone Number from Parent : {detail.phoneNumber}</p>
+    </template>
+</template>

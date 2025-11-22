@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Import Utility">
+
+        The current logged in user is: {userId}<br>
+
+        Does he have the permission set enabled? {hasPermission}<br>
+
+        Device Info : {deviceInfo}<br>
+
+        Language : {language}<br>
+
+        User Locale : {userLocale}<br>
+
+        Currency Locale : {userCurrency}<br>
+
+        <img src={src}>
+
+        <template lwc:if={showInProd}>
+            <p>This content is only visible in production orgs.</p>
+        </template>
+        <template lwc:else>
+            <p>This content is only visible in Sandbox orgs.</p>
+        </template>
+        <img src={svgExample}>
+    </lightning-card>
+</template>
