@@ -1,0 +1,37 @@
+<template>
+    <lightning-card title="Create a Record with Custom Layout without Apex">
+        <lightning-record-edit-form object-api-name="Case">
+
+            <lightning-messages></lightning-messages>
+
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-1 slds-p-around_small">
+                    <lightning-input-field field-name="Subject"></lightning-input-field>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-p-around_small">
+                    <lightning-input-field field-name="Reason"></lightning-input-field>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-p-around_small">
+                    <lightning-input-field field-name="Type"></lightning-input-field>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-p-around_small">
+                    <lightning-input-field field-name="Origin"></lightning-input-field>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-p-around_small">
+                    <lightning-input-field field-name="SLAViolation__c"></lightning-input-field>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-p-around_small">
+                    <lightning-input-field field-name="Description"></lightning-input-field>
+                </div>
+
+                <div class="slds-col slds-size_1-of-1 slds-p-around_small">
+                    <lightning-button variant="brand" type="submit" label="Create Case" class="slds-m-top_small slds-col slds-size_1-of-1">
+                    </lightning-button>
+
+                    <lightning-button variant="neutral" type="reset" label="Reset" class="slds-m-left_small slds-col slds-size_1-of-1">
+                    </lightning-button>
+                </div>
+            </div>
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>
