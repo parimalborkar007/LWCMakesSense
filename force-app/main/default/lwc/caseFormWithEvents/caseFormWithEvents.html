@@ -1,0 +1,24 @@
+<template>
+    <div class="slds-card slds-p-around_medium">
+        <lightning-record-edit-form 
+            object-api-name={objectApiName}
+            density="compact"
+            onsuccess={handleSuccess}
+            onsubmit={handleSubmit}
+            onload={handleLoad}
+            onerror={handleError}
+        >
+
+        <lightning-messages></lightning-messages>
+
+        <lightning-input-field field-name="Subject"></lightning-input-field>
+        <lightning-input-field field-name="Description"></lightning-input-field>
+        <lightning-input-field field-name="Priority"></lightning-input-field>
+        <lightning-input-field field-name="Status"></lightning-input-field>
+
+        <lightning-button type="submit" label="Create Case" class="slds-m-left_small slds-m-bottom_small" variant="brand"></lightning-button>
+        <lightning-button type="reset" label="Reset" class="slds-m-bottom_small slds-m-left_small"></lightning-button>
+
+        </lightning-record-edit-form>
+    </div>
+</template>
