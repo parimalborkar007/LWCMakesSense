@@ -120,9 +120,42 @@
 //     console.log("Hello is Called - ", data.detail);
 // });
 
-const sum = (data)=>{
-    let sum = data+10;
-    return sum;
-}
+// const sum = (data)=>{
+//     let sum = data+10;
+//     return sum;
+// }
 
-console.log(sum(5));
+// console.log(sum(5));
+
+
+// Arrow Functions and 'this' keyword
+
+// let obj = {
+//     name1: "Parimal",
+//     getName: function(){
+//         console.log(this.name1);
+//         const fullName = () => {
+//             console.log(this.name1)
+//             console.log("My full name is " + this.name1 + " Borkar");
+//         }
+//         fullName();
+//     }
+// }
+
+// obj.getName();
+
+// setTimeout and setInterval
+
+// window.setTimeout(function(){
+//     console.log("This is setTimeout function executed after 3 seconds");
+// },3000);
+
+// let count = 0;
+// let intervalId = window.setInterval(function(){
+//     count++;
+//     console.log("setInterval executed " + count + " times");
+//     if(count == 5){
+//         window.clearInterval(intervalId);
+//         console.log("setInterval cleared after 5 executions");
+//     }
+// },2000);

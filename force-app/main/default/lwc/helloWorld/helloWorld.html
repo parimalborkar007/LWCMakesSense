@@ -1,0 +1,43 @@
+<template>
+
+    <!-- Two Way Data Binding Example -->
+    <lightning-card title="Two Way Data Binding Example">
+        <div class="slds-p-around_small">
+
+            <div>Hello Parimal!</div>
+            <div>My full name is {fullName}</div>
+
+            <lightning-input 
+                label="Enter Full Name" 
+                onchange={changeHandler}>
+            </lightning-input>
+
+        </div>
+    </lightning-card>
+
+    <!-- @track Example -->
+    <lightning-card title="@track Example">
+        <div class="slds-p-around_small">
+
+            <lightning-input 
+                type="text" 
+                label="Enter City Name" 
+                onchange={trackChangeHandler}>
+            </lightning-input>
+
+            <div>Your city name is {address.city}</div>
+
+        </div>
+    </lightning-card>
+
+    <!-- Getter Example -->
+    <lightning-card title="Getter Example">
+        <div class="slds-p-around_small">
+
+            <div>First User: {firstUser}</div>
+            <div>Multiplication of {num1} and {num2} is : {multiplication}</div>
+
+        </div>
+    </lightning-card>
+
+</template>
