@@ -1,38 +1,71 @@
 <template>
     <lightning-card title="Quiz App in LWC">
-        <div class="slds-m-around_medium">
-            <strong>Here goes your Quiz. Get Set Ready!</strong>
+        <div class="slds-p-around_medium">
 
-            <template for:each={myQuestions} for:item="quiz">
-                <div key={quiz.id} class="slds-m-around_medium">
+            <!-- Result -->
+            <template if:true={isSubmitted}>
+                <div class={scoreClass}>
+                    You have scored {correctAnswers} out of {questions.length}
+                </div>
+            </template>
+
+            <p class="slds-text-title_bold slds-m-bottom_medium">
+                Here goes your Quiz. Get Set Ready!
+            </p>
+
+            <!-- Questions -->
+            <template for:each={questions} for:item="quiz">
+                <div key={quiz.id} class="slds-box slds-m-bottom_medium">
 
                     <!-- Question -->
-                    <div class="slds-text-heading_small">
+                    <div class="slds-text-heading_small slds-text-title_bold slds-m-bottom_small">
                         {quiz.id}. {quiz.question}
                     </div>
 
-                    <!-- Options in one row -->
-                    <div class="slds-grid slds-gutters slds-p-top_small">
-                        <div class="slds-col">
-                            <input type="radio" name={quiz.id} value="a" onchange={changeHandler}/>
-                            a. {quiz.answers.a}
-                        </div>
-                        <div class="slds-col">
-                            <input type="radio" name={quiz.id} value="b" onchange={changeHandler}/>
-                            b. {quiz.answers.b}
-                        </div>
-                        <div class="slds-col">
-                            <input type="radio" name={quiz.id} value="c" onchange={changeHandler}/>
-                            c. {quiz.answers.c}
-                        </div>
-                        <div class="slds-col">
-                            <input type="radio" name={quiz.id} value="d" onchange={changeHandler}/>
-                            d. {quiz.answers.d}
-                        </div>
-                    </div>
+                    <!-- BEFORE SUBMIT → Radio buttons -->
+                    <template if:false={isSubmitted}>
+                        <lightning-radio-group
+                            name={quiz.id}
+                            options={quiz.options}
+                            value={quiz.selectedValue}
+                            onchange={changeHandler}
+                            type="radio">
+                        </lightning-radio-group>
+                    </template>
+
+                    <!-- AFTER SUBMIT → Highlighted answers -->
+                    <template if:true={isSubmitted}>
+                        <ul class="slds-list_vertical slds-m-top_small">
+                            <template for:each={quiz.options} for:item="opt">
+                                <li
+                                    key={opt.value}
+                                    class={opt.className}>
+                                    {opt.label}
+                                </li>
+                            </template>
+                        </ul>
+                    </template>
 
                 </div>
             </template>
+
+            <!-- Buttons -->
+            <div class="slds-m-top_medium">
+                <lightning-button
+                    label="Submit"
+                    variant="brand"
+                    class="slds-m-right_small"
+                    disabled={allNotSelected}
+                    onclick={submitHandler}>
+                </lightning-button>
+
+                <lightning-button
+                    label="Reset"
+                    variant="neutral"
+                    onclick={resetHandler}>
+                </lightning-button>
+            </div>
+
         </div>
     </lightning-card>
 </template>
