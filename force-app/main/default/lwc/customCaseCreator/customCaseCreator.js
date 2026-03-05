@@ -1,5 +1,6 @@
 import { LightningElement } from 'lwc';
 import { createRecord } from 'lightning/uiRecordApi';
+import {getObjectInfo} from 'lightning/uiObjectInfoApi';
 import CASE_OBJECT from '@salesforce/schema/Case';
 import SUBJECT_FIELD from '@salesforce/schema/Case.Subject';
 import DESCRIPTION_FIELD from '@salesforce/schema/Case.Description';
@@ -10,6 +11,12 @@ export default class CustomCaseCreator extends LightningElement {
     subjecr = '';
     description = '';
     priority = '';
+
+    @wire(getObjectInfo, { objectApiName: CASE_OBJECT }, caseRecord)
+
+    get recordTypeName(){
+
+    }
 
     get priorityOptions() {
         return [
