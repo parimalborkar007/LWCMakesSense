@@ -2,7 +2,7 @@ import { LightningElement } from 'lwc';
 
 export default class Looping extends LightningElement {
 
-    carList = ["Ford", "Chevrolet", "Toyota", "Honda", "BMW", "Audi", "Mercedes"];
+    carList = ["Ford", "Chevrolet", "Toyota", "Honda", "BMW", "Audi", "Mercedes","Hyundai", "Kia", "Nissan"];
 
     ceoList = [
         {id: 1, name: 'Elon Musk', company: 'Tesla'},
