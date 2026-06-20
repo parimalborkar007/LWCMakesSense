@@ -1,0 +1,11 @@
+.success {
+    color: #2e844a;
+    border-left: 4px solid #2e844a;
+    font-weight: 700;
+}
+
+.failure {
+    color: #ba0517;
+    border-left: 4px solid #ba0517;
+    font-weight: 700;
+}

@@ -1,0 +1,56 @@
+<template>
+    <lightning-card title="Quiz Application" icon-name="utility:education">
+
+        <div class="slds-p-around_medium">
+
+            <template if:true={isSubmitted}>
+                <div class={resultClass}>
+                    {scoreMessage}
+                </div>
+            </template>
+
+            <template for:each={myQuestions} for:item="question">
+
+                <div
+                    key={question.id}
+                    class="slds-box slds-m-bottom_medium">
+
+                    <div class="slds-text-heading_small slds-m-bottom_small">
+                        <strong>
+                            {question.id}. {question.question}
+                        </strong>
+                    </div>
+
+                    <lightning-radio-group
+                        name={question.id}
+                        options={question.options}
+                        type="radio"
+                        onchange={handleOptionChange}>
+                    </lightning-radio-group>
+
+                </div>
+
+            </template>
+
+            <div class="slds-m-top_large">
+
+                <lightning-button
+                    label="Submit"
+                    variant="brand"
+                    onclick={handleSubmit}
+                    disabled={allNotSelected}>
+                </lightning-button>
+
+                <lightning-button
+                    label="Reset"
+                    variant="neutral"
+                    onclick={handleReset}
+                    class="slds-m-left_small">
+                </lightning-button>
+
+            </div>
+
+        </div>
+
+    </lightning-card>
+</template>
