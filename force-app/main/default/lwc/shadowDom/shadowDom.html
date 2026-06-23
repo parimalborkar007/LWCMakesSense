@@ -1,0 +1,8 @@
+<template>
+  <div class="container">
+    <h1>Shadow DOM Demonstration</h1>
+    <p>This component uses Shadow DOM for style encapsulation.</p>
+    <button onclick={handleClick}>Click Me</button>
+    <p if:true={isClicked} class="message">You clicked the button!</p>
+  </div>
+</template>

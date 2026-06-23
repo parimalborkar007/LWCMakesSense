@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Create LWC (scaffold)",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}\\.vscode\\scripts\\create-lwc.ps1",
+        "-Name",
+        "${input:componentName}"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "componentName",
+      "type": "promptString",
+      "description": "Enter the Lightning Web Component name (kebab-case recommended)",
+      "default": "myComponent"
+    }
+  ]
+}
